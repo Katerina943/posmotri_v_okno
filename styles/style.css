@@ -8,14 +8,18 @@ html {
   block-size: 100%;
 }
 
+/* body */
 .page {
   inline-size: 1200px;
   block-size: 100%;
   margin: auto;
   color: #fff;
-  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   background-color: #1b1919;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 h1,
@@ -36,3 +40,323 @@ ul,
 ol {
   list-style: none;
 }
+
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* основной блок main */
+.content {
+  inline-size: 1200px;
+  display: flex;
+  align-items: end;
+  gap: 30px;
+  margin: 133px 30px;
+}
+
+/* секция с видео и поисковой строкой */
+.result {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.result__video-container {
+  inline-size: 711px;
+  block-size: 386px;
+  position: relative;
+}
+
+.result__video {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+}
+
+/* форма с поиском */
+.search-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+/* fieldset, поле Город, Время суток в строке поиска */
+.search-form__fieldset {
+  border: none;
+  gap: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* h2, наим-я: Город, Время суток*/
+.search-form__fieldset-title {
+  font-size: 18px;
+  font-family: "Fira Sans Condensed" serif;
+  font-style: normal;
+  font-weight: normal;
+  line-height: normal;
+}
+
+/* label, Строка поиска, строка чекбоксов */
+.search-form__label {
+  display: flex;
+  width: fit-content;
+  gap: 5px;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+}
+
+/* div, блок с чекбоксами */
+.search-form__checkbox-list {
+  display: flex;
+  gap: 15px;
+}
+
+/* input, текстовое поле */
+.search-form__textfield {
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #fff;
+  border-top: 1px solid #fff;
+  font-size: inherit;
+  font-family: inherit;
+  inline-size: 225px;
+  block-size: 27px;
+  align-items: center;
+  font-weight: normal;
+  line-height: normal;
+  cursor: text;
+  padding-left: 2px;
+  color: inherit;
+}
+
+/* поиск, сброс линий*/
+.search-form__textfield:focus {
+  outline: none;
+}
+
+/* добавление доболнительной обвотки поиску в активном состоянии*/
+.search-form__textfield:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 2px;
+}
+
+/* label, чекбокс и надпись */
+.search-form__label {
+  width: fit-content;
+  display: flex;
+  gap: 5px;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+}
+
+/* input чекбокса*/
+.search-form__checkbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* span, отрисовка чекбокса*/
+.search-form__pseudo-checkbox {
+  border: 1px solid #fff;
+  inline-size: 19px;
+  block-size: 19px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+/* при наведении на ссылки задаем нормальную линию*/
+.search-form__label:hover {
+  text-decoration: underline 1px #fff;
+  text-underline-offset: 5px;
+}
+
+/* выбранный чекбокс + обводка*/
+.search-form__checkbox[type="checkbox"]:checked + .search-form__pseudo-checkbox {
+  background-color: #fff;
+  inline-size: 19px;
+  block-size: 19px;
+  outline: 1px solid #fff;
+  outline-offset: 2px;
+}
+
+/* кнопки */
+.button {
+  display: flex;
+  background-color: transparent;
+  border: 1px solid white;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: normal;
+  color: #fff;
+  align-items: flex-end;
+}
+
+.button:active {
+  background-color: #545050;
+}
+
+.button:hover {
+  text-decoration: underline 1px #fff;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+/* кнопка Найти */
+.search-form__submit-button {
+  padding: 6px 73.5px;
+  inline-size: 194px;
+  block-size: 34px;
+}
+
+.search-form__submit-button:hover {
+  text-decoration: underline;
+}
+
+/* кнопка Показать ещё */
+.more-button {
+  padding: 6px 145px;
+  inline-size: 399px;
+  block-size: 34px;
+}
+
+/* Секция с надписью и скролом*/
+.content__details {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+/* надпись Посмотри в окно */
+.title {
+  font-size: 75px;
+  font-family: "Oswald", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+/* ПО */
+.content__accent {
+  color: #545050;
+}
+
+/* ul, список со cкролом */
+.content__list {
+  width: 400px;
+  height: 298px;
+  overflow-y: auto;
+  scrollbar-width: none; /* сделать полосу скрола тоньше */
+  scroll-behavior: smooth;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  position: relative;
+  margin: 2px;
+}
+
+/* a href, ссылка в списке */
+.content__card-link {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+}
+
+.content__card-link_current {
+  background-color: #545050;
+}
+
+.content__card-link:active {
+  background-color: #545050;
+}
+
+.content__card-link:hover {
+  text-decoration: underline 1px #fff;
+  text-underline-offset: 5px;
+}
+
+.content__card-link:focus {
+  outline: none;
+}
+
+.content__card-link:focus-visible {
+  outline: 1px solid #fff;
+}
+
+/* article, раздел списка с заголовком и изображением*/
+.content__video-card {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  align-items: flex-start;
+}
+
+/* div, блок с надписями списка h2, p */
+.content__video-card-description-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex-grow: 1;
+  padding: 2px;
+}
+
+/* h2, заголовок списка */
+.content__video-card-title {
+  font-size: 30px;
+  font-family: "Oswald", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* p, надпись списка */
+.content__video-card-description {
+  font-size: 18px;
+  font-family: "Fira Sans Condensed", serif;
+  font-weight: normal;
+  line-height: 16.2%;
+}
+
+/* img, эскиз*/
+.content__video-card-thumbnail {
+  display: flex;
+  object-fit: cover;
+  inline-size: 194px;
+  block-size: 103px;
+}
+
+
+
+
+
+
+
+
+
+
+
+

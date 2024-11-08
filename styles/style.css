@@ -78,6 +78,14 @@ ol {
   object-fit: cover;
 }
 
+img {
+  object-position: center;
+}
+
+video {
+  object-position: center;
+}
+
 /* форма с поиском */
 .search-form {
   display: flex;
@@ -98,20 +106,10 @@ ol {
 /* h2, наим-я: Город, Время суток*/
 .search-form__fieldset-title {
   font-size: 18px;
-  font-family: "Fira Sans Condensed" serif;
+  font-family: "Fira Sans Condensed", sans-serif;
   font-style: normal;
   font-weight: normal;
   line-height: normal;
-}
-
-/* label, Строка поиска, строка чекбоксов */
-.search-form__label {
-  display: flex;
-  width: fit-content;
-  gap: 5px;
-  align-items: center;
-  border: none;
-  cursor: pointer;
 }
 
 /* div, блок с чекбоксами */
@@ -150,7 +148,7 @@ ol {
   outline-offset: 2px;
 }
 
-/* label, чекбокс и надпись */
+/* label, Строка поиска, строка чекбоксов, чекбокс и надпись */
 .search-form__label {
   width: fit-content;
   display: flex;
@@ -158,6 +156,7 @@ ol {
   cursor: pointer;
   justify-content: center;
   align-items: center;
+  border: none;
 }
 
 /* input чекбокса*/
@@ -205,6 +204,9 @@ ol {
   line-height: normal;
   color: #fff;
   align-items: flex-end;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .button:active {
@@ -237,7 +239,6 @@ ol {
 
 /* кнопка Показать ещё */
 .more-button {
-  padding: 6px 145px;
   inline-size: 399px;
   block-size: 34px;
 }
@@ -269,13 +270,16 @@ ol {
   width: 400px;
   height: 298px;
   overflow-y: auto;
-  scrollbar-width: none; /* сделать полосу скрола тоньше */
+  overflow-x: hidden;
   scroll-behavior: smooth;
   display: flex;
   flex-direction: column;
-  gap: 30px;
   position: relative;
   margin: 2px;
+}
+
+.content__list-item:not(:last-child) {
+  margin: 0 0 34px;
 }
 
 /* a href, ссылка в списке */
@@ -330,12 +334,16 @@ ol {
   font-style: normal;
   font-weight: bold;
   text-transform: uppercase;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 192px; 
 }
 
 /* p, надпись списка */
 .content__video-card-description {
   font-size: 18px;
-  font-family: "Fira Sans Condensed", serif;
+  font-family: "Fira Sans Condensed", sans-serif;
   font-weight: normal;
   line-height: 16.2%;
 }
